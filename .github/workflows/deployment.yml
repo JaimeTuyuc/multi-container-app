@@ -84,7 +84,7 @@ jobs:
           submodules: true
 
       - name: Generate deployment package
-        run: zip -r deploy.zip Dockerrun.aws.json
+        run: zip -r deploy.zip . -x '*.git*'
 
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v18
