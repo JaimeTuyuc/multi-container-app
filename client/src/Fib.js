@@ -9,12 +9,14 @@ const Fib = () => {
   useEffect(() => { 
     const fetchValues = async () => {
       const values = await axios.get('/api/values/current');
+      console.log("🚀 ~ fetchValues ~ values:", values)
       setValues(values.data);
     }
     fetchValues();
 
     const fetchIndexes = async () => {
       const seenIndexes = await axios.get('/api/values/all');
+      console.log("🚀 ~ fetchIndexes ~ seenIndexes:", seenIndexes)
       setSeenIndexes(seenIndexes.data);
     }
     fetchIndexes();
