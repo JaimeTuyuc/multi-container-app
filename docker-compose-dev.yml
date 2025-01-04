@@ -55,3 +55,5 @@ services:
     depends_on:
       - api
       - client
+      - postgress
+      - redis
